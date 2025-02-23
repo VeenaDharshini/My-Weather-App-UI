@@ -1,0 +1,14 @@
+.spinner {
+	width: var(--spinner-size);
+	height: var(--spinner-size);
+	border-radius: 50%;
+	border: var(--spinner-thickness) solid var(--spiner-border);
+	border-top-color: var(--spiner-accent);
+	animation: spinner var(--spin-anim-duration) linear infinite;
+}
+
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
