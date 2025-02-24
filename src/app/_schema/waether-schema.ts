@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const city_search_schema = z.object({
-	city: z
+	cityName: z
 		.string()
 		.trim()
 		.min(1, {
@@ -11,7 +11,7 @@ export const city_search_schema = z.object({
 			message: "Name must be at least 3 characters.",
 		}),
 	unit: z.string().default("metric"),
-	lang: z.string().default("en"),
+	language: z.string().default("en"),
 });
 
 export type CitySearch = z.infer<typeof city_search_schema>;

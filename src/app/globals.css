@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+.very-hot {
+	background-image: url("/assets/very-hot-temperature.jpg");
+}
+
+.hot {
+	background-image: url("/assets/hot-temperature.jpg");
+}
+
+.normal {
+	background-image: url("/assets/normal-temperature.jpg");
+}
+
+.cool {
+	background-image: url("/assets/cool-temperature.jpg");
+}
+
+.cold {
+	background-image: url("/assets/cold-temperature.jpg");
+}
+
+.freezing {
+	background-image: url("/assets/freezing-cold-temperature.jpg");
+}
+
 :root {
 	--background: radial-gradient(circle at center, #ffffff, #cfb8f8);
 	--foreground: #191919;

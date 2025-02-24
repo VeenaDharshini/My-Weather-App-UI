@@ -29,9 +29,7 @@ export function WeatherAppMain() {
 	const form = useForm<CitySearch>({
 		resolver: zodResolver(city_search_schema),
 		defaultValues: {
-			city: "",
-			unit: "metric",
-			lang: "en",
+			cityName: "",
 		},
 	});
 
@@ -39,30 +37,30 @@ export function WeatherAppMain() {
 
 	const onSubmit = async (formData: CitySearch) => {
 		try {
-			const response = await api.get("weather", { params: formData });
+			const response = await api.post("weather", formData);
 			if (response.status === 200) {
 				set_weather_response(response.data);
 			}
-		} catch (error) {
+		} catch (error: any) {
 			set_weather_response(null);
 			toast.error(JSON.stringify(error.response.data.message));
 		}
 	};
 
 	return (
-		<main>
+		<main className="w-[calc(100vw-40px)] md:w-full md:max-w-3xl mx-auto flex flex-col justify-center items-center gap-20">
 			<Form {...form}>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
 					className="flex flex-row">
 					<FormField
 						control={control}
-						name="city"
+						name="cityName"
 						render={({ field }) => (
 							<FormItem>
 								<FormControl>
 									<Input
-										className="border border-[#4114a3] rounded-l-md rounded-r-none border-dotted border-r-0"
+										className="border border-[#4114a3] w-56 md:w-80 rounded-l-md rounded-r-none border-dotted border-r-0"
 										placeholder="Search Your City Here"
 										{...field}
 									/>
@@ -79,7 +77,12 @@ export function WeatherAppMain() {
 				</form>
 			</Form>
 			{weather_response ? (
-				<WeatherDetails weather_details={weather_response} />
+				<WeatherDetails
+					weather_details={{
+						...weather_response,
+						unit: form.getValues("unit"),
+					}}
+				/>
 			) : null}
 		</main>
 	);
