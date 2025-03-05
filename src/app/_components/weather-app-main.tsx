@@ -41,9 +41,9 @@ export function WeatherAppMain() {
 			if (response.status === 200) {
 				set_weather_response(response.data);
 			}
-		} catch (error: any) {
+		} catch {
 			set_weather_response(null);
-			toast.error(JSON.stringify(error.response.data.message));
+			toast.error("Something went wrong");
 		}
 	};
 
