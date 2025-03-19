@@ -4,9 +4,12 @@ A **Weather Forecast Application** built with **Spring Boot (backend)** and **Ne
 
 ## 🚀 Features
 
+```bash
+https://my-weather-app-two.vercel.app/
+```
+
 ✔️ Get real-time weather updates for any city  
 ✔️ Supports **Celsius** & **Fahrenheit** toggle ️  
-✔️ Caching to reduce API calls  
 ✔️ Multi-language support  
 ✔️ Dynamic backgrounds based on temperature
 
@@ -51,11 +54,11 @@ cd weather-app
 ### **2️⃣ Backend Setup (Spring Boot)**
 
 - Make sure you have **Java 17+** and **Gradle** installed.
-- Configure your **API Key** in `application.properties`:
+- Configure your **API Key** in `.env`:
 
 ```properties
-openweather.api.key=YOUR_OPENWEATHER_API_KEY
-openweather.api=https://api.openweathermap.org/data/2.5/weather
+OPEN_WEATHER_API=https://api.openweathermap.org/data/2.5
+OPEN_WEATHER_API_KEY=your-open-weather-api-key
 ```
 
 - Run the application:
@@ -90,8 +93,7 @@ pnpm run dev
 ## Environment Variables
 
 ```bash
-NEXT_PUBLIC_API_BASE_URL="http://localhost:8080/api/"
-CACHE_TTL=3600  # Cache duration in seconds
+NEXT_PUBLIC_API_BASE_URL="https://elegant-celebration-production.up.railway.app/api/"
 ```
 
 ---
