@@ -43,12 +43,21 @@ export function WeatherAppMain() {
 			}
 		} catch {
 			set_weather_response(null);
-			toast.error("Something went wrong");
+			document.body.classList.remove(
+				"very-hot",
+				"hot",
+				"normal",
+				"cool",
+				"cold",
+				"freezing"
+			);
+			document.body.classList.add("background");
+			toast.error("Something went wrong! Please type proper location!");
 		}
 	};
 
 	return (
-		<main className="w-[calc(100vw-40px)] md:w-full md:max-w-3xl mx-auto flex flex-col justify-center items-center gap-20">
+		<main className="mt-[20vh] w-[calc(100vw-40px)] md:w-full md:max-w-3xl mx-auto flex flex-col justify-center items-center gap-20">
 			<Form {...form}>
 				<form
 					onSubmit={handleSubmit(onSubmit)}
