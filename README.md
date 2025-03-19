@@ -2,11 +2,11 @@
 
 A **Weather Forecast Application** built with **Spring Boot (backend)** and **Next.js (frontend)** using **OpenWeather API** to fetch real-time weather data.
 
-## 🚀 Features
-
 ```bash
 https://my-weather-app-two.vercel.app/
 ```
+## 🚀 Features
+
 
 ✔️ Get real-time weather updates for any city  
 ✔️ Supports **Celsius** & **Fahrenheit** toggle ️  
